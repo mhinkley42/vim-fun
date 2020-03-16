@@ -78,7 +78,12 @@ set relativenumber
 " Set status line display
 set laststatus=2
 set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ [BUFFER=%n]\ %{strftime('%c')}
-
+" Vexplore borwser to take up 1/4 of page
+let g:netrw_winsize = 25
+"open new file from netrw in a new hotizantal (2 if for vertical split
+let g:netrw_browse_split = 1
+"get rid of its ugly banner
+let g:netrw_banner = 0
 " Encoding
 set encoding=utf-8
 
@@ -132,3 +137,4 @@ nnoremap <silent> <leader>O :<C-u>call append(line(".")-1, repeat([""], v:count1
 "format jsons
 com! FormatJSON %!python -m json.tool
 "End of Mikes stuff"
+
